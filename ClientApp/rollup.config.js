@@ -61,7 +61,7 @@ function serve() {
 				//HACK: MSFT ASP.NET extension for react will pass a port and expect a web server on that port. 
 				let port = parseInt(process.env.PORT, 10) || 8083;
 				started = true;
-				let npm = require('child_process').spawn('PORT='+ port + ' npm', ['run', 'start', '--', '--dev', '--port', port], {
+				let npm = require('child_process').spawn('npm', ['run', 'start', '--', '--dev', '--port', port], {
 					//STDIN: Ignore, STDIOUT: Pipe to this script, STDIERR: Pass to MSBuild
 					stdio: ['ignore', 'pipe', 'inherit'],
 					shell: true
